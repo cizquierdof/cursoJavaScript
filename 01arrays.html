@@ -21,6 +21,7 @@
             <main class="principal">
                 <h1>Manejo de Arrays</h1>
                 <script>
+                    document.write("<h2>Acceso a elementos del Array</h2>");
                     document.write("<p>El primer elemento de la cadena es: <strong>");
                     document.write(cadena[0]+"</strong></p>");  //acceso a elementos de la cadena
 
@@ -28,16 +29,38 @@
                     var lStr=cadena.length;  //obtener número de elementos de la cadena
                     document.write(cadena[lStr-1]+"</strong></p>");   //obtenemos el último elemento de la cadena
 
+/*          AÑADIENDO ELEMENTOS
+*           METODOS UNSHIFT Y PUSH      */
+
                     cadena.unshift("Elemento0");    //añade un elemento al principio de la cadena
                     cadena.push("Elemento5");       //añade un elemento al final del array
 
-                    document.write("<h2>Ahora cadena contiene:</h2>");
+                    document.write("<h2>añadiendo elementos</h2>");
+                    document.write("Contenido del Array:");
                     document.write("<ul>");
+
+                    //UNA FORMA DE RECORRER UNA CADENA
                     for(var i=0;i<=cadena.length-1;i++){
                         document.write("<li>Posición "+(i+1)+": <strong>");
                         document.write(cadena[i]+"</strong></li>");
                     }
                     document.write("</ul>");
+
+/*          ELIMNANDO ELEMENTOS
+           *METODOS SHIFT Y POP          */
+
+                    document.write("<h2>Borrado de elementos</h2>");
+                    cadena.shift();     //borra el primer elemento
+
+                    document.write("<ul>");
+                    for(i in cadena){
+                        document.write("<li>Posición "+(i+1)+": <strong>");
+                        document.write(cadena[i]+"</strong></li>");
+                    }
+                    document.write("</ul>");
+
+
+
 
 
 
