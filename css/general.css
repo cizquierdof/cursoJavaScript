@@ -1,28 +1,27 @@
 body{
     font-family: verdana,sans-serif;
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
 }
 
-h1,h2{
+h1{
     color:#FC0;
     border-top:2px solid #FFF;
     border-bottom:2px solid #FFF;
     padding-bottom:25px;
     padding-top: 25px;
     text-align:center;
+    font-size: 2em;
 }
 
 p{
-    color:#FC0;
-    font-size:2em;
+    color: #ffffff;
+    font-size: medium;
 }
 li {
     color: #fc0;
     text-decoration: none;
-}
-
-p span{font-size:2em;
 }
 
 .contenedor {

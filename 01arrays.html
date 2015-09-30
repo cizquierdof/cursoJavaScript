@@ -9,7 +9,14 @@
         var cadena=["Elemento1","elemento2","elemento3","elemento4"];   //declaración de cadena dandole valores
         //var cadena=new array["Elemento1","elemento2","elemento3","elemento4"];    otra forma de declaración
 
-
+        function listArray(str){
+            document.write("<ul>");
+            for(i in str){
+                document.write("<li>Posición "+i+": <strong>");
+                document.write(str[i]+"</strong></li>");
+            }
+            document.write("</ul>");
+        }
     </script>
 </head>
 <body>
@@ -37,34 +44,45 @@
 
                     document.write("<h2>añadiendo elementos</h2>");
                     document.write("Contenido del Array:");
-                    document.write("<ul>");
 
-                    //UNA FORMA DE RECORRER UNA CADENA
-                    for(var i=0;i<=cadena.length-1;i++){
-                        document.write("<li>Posición "+(i+1)+": <strong>");
-                        document.write(cadena[i]+"</strong></li>");
-                    }
-                    document.write("</ul>");
+                    listArray(cadena);
 
 /*          ELIMNANDO ELEMENTOS
            *METODOS SHIFT Y POP          */
 
                     document.write("<h2>Borrado de elementos</h2>");
                     cadena.shift();     //borra el primer elemento
+                    cadena.pop();
 
-                    document.write("<ul>");
-                    for(i in cadena){
-                        document.write("<li>Posición "+(i+1)+": <strong>");
-                        document.write(cadena[i]+"</strong></li>");
-                    }
-                    document.write("</ul>");
+                    listArray(cadena);
+
+/*          AÑADIR O SUSTITUIR ELEMENTOS
+*           METODO splice()                 */
+
+                    document.write("<h2>Metodo splice()</h2>");
+                    document.write("<p>Mediante splice() podemos añadir o sustituir varios elementos  a la vez</p>");
+
+                    //splice(inicio, nº elementos borrar, [elemento1, elemento2,...])
+                    document.write("<p>Añadiendo dos elementos en medio del Array</p>")
+                    cadena.splice(2,2,"sopa","fruta");  //sustituye cadena[2] y cadena[3] por "sopa" y "fruta"
+                    listArray(cadena);
+
+                    document.write("<p>Añade un elemento en una posición determinada</p>")
+                    cadena.splice(2,0,"zapato");    //añade un nuevo elemento en cadena[2] desplazando a los demás
+                    listArray(cadena);
+
+                    document.write("<p>Borramos 'zapato' sin dejar hueco</p>");
+                    cadena.splice(2,1);     //borra el elemento "zapato sin dejar huecos
+                    listArray(cadena);
 
 
+/*          MODIFICANDO ELEMENTOS DE LA CADENA  */
 
+                    document.write("<h2>Modificando elementos de la cadena</h2>");
+                    document.write("<p>Vamos a sustituir el elemento 3 por 'NuevoElemento3'</p>");
 
-
-
-
+                    cadena[2]="NuevoElemento3";
+                    listArray(cadena);
 
                 </script>
             </main>
