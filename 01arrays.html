@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="css/general.css">
     <script>
 
-
+        var cadena=["Elemento1","elemento2","elemento3","elemento4"];   //declaración de cadena dandole valores
+        //var cadena=new array["Elemento1","elemento2","elemento3","elemento4"];    otra forma de declaración
 
 
     </script>
@@ -20,6 +21,23 @@
             <main class="principal">
                 <h1>Manejo de Arrays</h1>
                 <script>
+                    document.write("<p>El primer elemento de la cadena es: <strong>");
+                    document.write(cadena[0]+"</strong></p>");  //acceso a elementos de la cadena
+
+                    document.write("<p>El último elemento es: <strong> ");
+                    var lStr=cadena.length;  //obtener número de elementos de la cadena
+                    document.write(cadena[lStr-1]+"</strong></p>");   //obtenemos el último elemento de la cadena
+
+                    cadena.unshift("Elemento0");    //añade un elemento al principio de la cadena
+                    cadena.push("Elemento5");       //añade un elemento al final del array
+
+                    document.write("<h2>Ahora cadena contiene:</h2>");
+                    document.write("<ul>");
+                    for(var i=0;i<=cadena.length-1;i++){
+                        document.write("<li>Posición "+(i+1)+": <strong>");
+                        document.write(cadena[i]+"</strong></li>");
+                    }
+                    document.write("</ul>");
 
 
 

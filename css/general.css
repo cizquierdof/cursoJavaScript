@@ -4,17 +4,22 @@ body{
     padding: 0;
 }
 
-h1{
+h1,h2{
     color:#FC0;
     border-top:2px solid #FFF;
     border-bottom:2px solid #FFF;
-    padding-bottom:50px;
+    padding-bottom:25px;
+    padding-top: 25px;
     text-align:center;
 }
 
 p{
     color:#FC0;
     font-size:2em;
+}
+li {
+    color: #fc0;
+    text-decoration: none;
 }
 
 p span{font-size:2em;
