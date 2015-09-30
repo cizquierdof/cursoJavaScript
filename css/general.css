@@ -1,0 +1,30 @@
+body{
+    font-family: verdana,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color:#FC0;
+    border-top:2px solid #FFF;
+    border-bottom:2px solid #FFF;
+    padding-bottom:50px;
+    text-align:center;
+}
+
+p{
+    color:#FC0;
+    font-size:2em;
+}
+
+p span{font-size:2em;
+}
+
+.contenedor {
+
+   width: 75%;
+    margin: auto;
+    margin-top: 0;
+    background-color:#334873;
+    min-height: 800px;
+}
