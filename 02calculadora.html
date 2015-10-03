@@ -3,6 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculadora JavaScript</title>
+    <style>
+        .boton{
+            width: 100%;
+            height: 5vw;
+            font-size: larger;
+            font-weight: 800;
+            font-family: sans-serif;
+        }
+        .calculadora table{
+            border: dashed black 1px;
+            width: 30%;
+        }
+        .pantalla{
+
+            color: #fff;
+            width: 100%;
+            height: 5vw;
+            background: cadetblue;
+            font-size: xx-large;
+            text-align: right;
+        }
+    </style>
+    <script>
+        var digito="";
+        function dispDigito(num){
+            document.getElementById("pantalla").value=digito+num;
+            digito=document.getElementById("pantalla").value;
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -11,31 +40,39 @@
 <div class="calculadora">
     <table>
         <tr>
-            <td><input class="pantalla" name="pantalla" type="text"></td>
+            <td colspan="4">
+                <input class="pantalla" id="pantalla" name="pantalla" type="text">
+            </td>
         </tr>
         <tr>
-            <td><input type="button" class="boton" name="btn7" value="7"></td>
-            <td><input type="button" class="boton" name="btn8" value="8"></td>
-            <td><input type="button" class="boton" name="btn9" value="9"></td>
-            <td><input type="button" class="boton" name="btndiv" value="/"></td>
+            <td><input type="button" class="boton" id="btnx" name="btnx" value=""></td>
+            <td><input type="button" class="boton" id="btny" name="btny" value=""></td>
+            <td><input type="button" class="boton" id="btnz" name="btnz" value=""></td>
+            <td><input type="button" class="boton" id="btndiv" name="btndiv" value="/"></td>
         </tr>
         <tr>
-            <td><input type="button" class="boton" name="btn4" value="4"></td>
-            <td><input type="button" class="boton" name="btn5" value="5"></td>
-            <td><input type="button" class="boton" name="btn6" value="6"></td>
-            <td><input type="button" class="boton" name="btnmul" value="*"></td>
+            <td><input type="button" class="boton" id="btn7" name="btn7" value="7" onclick="dispDigito(7)"></td>
+            <td><input type="button" class="boton" id="btn8" name="btn8" value="8" onclick="dispDigito(8)"></td>
+            <td><input type="button" class="boton" id="btn9" name="btn9" value="9" onclick="dispDigito(9)"></td>
+            <td><input type="button" class="boton" id="btnmul" name="btnmul" value="*"></td>
         </tr>
         <tr>
-            <td><input type="button" class="boton" name="btn1" value="1"></td>
-            <td><input type="button" class="boton" name="btn2" value="2"></td>
-            <td><input type="button" class="boton" name="btn3" value="3"></td>
-            <td><input type="button" class="boton" name="btnres" value="-"></td>
+            <td><input type="button" class="boton" id="btn4" name="btn4" value="4" onclick="dispDigito(4)"></td>
+            <td><input type="button" class="boton" id="btn5" name="btn5" value="5" onclick="dispDigito(5)"></td>
+            <td><input type="button" class="boton" id="btn6" name="btn6" value="6" onclick="dispDigito(6)"></td>
+            <td><input type="button" class="boton" id="btnres" name="btnres" value="-"></td>
         </tr>
         <tr>
-            <td><input type="button" class="boton" name="btn0" value="0"></td>
-            <td><input type="button" class="boton" name="btndot" value="."></td>
-            <td><input type="button" class="boton" name="btneq" value="="></td>
-            <td><input type="button" class="boton" name="btnsum" value="+"></td>
+            <td><input type="button" class="boton" id="btn1" name="btn1" value="1" onclick="dispDigito(1)"></td>
+            <td><input type="button" class="boton" id="btn2" name="btn2" value="2" onclick="dispDigito(2)"></td>
+            <td><input type="button" class="boton" id="btn3" name="btn3" value="3" onclick="dispDigito(3)"></td>
+            <td><input type="button" class="boton" id="btnsum" name="btnsum" value="+"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="boton" id="btn0" name="btn0" value="0" onclick="dispDigito(0)"></td>
+            <td><input type="button" class="boton" id="btndot" name="btndot" value="."></td>
+            <td colspan="2"><input type="button" class="boton" name="btneq" value="="></td>
+
         </tr>
     </table>
 </div>
