@@ -27,9 +27,15 @@
     </style>
     <script>
         var digito="";
+        var suma=0;
         function dispDigito(num){
             document.getElementById("pantalla").value=digito+num;
             digito=document.getElementById("pantalla").value;
+        }
+        function funSum(){
+            suma=suma+parseInt(digito);
+            document.getElementById("pantalla").value=suma;
+            digito="";
         }
     </script>
 </head>
@@ -48,25 +54,25 @@
             <td><input type="button" class="boton" id="btnx" name="btnx" value=""></td>
             <td><input type="button" class="boton" id="btny" name="btny" value=""></td>
             <td><input type="button" class="boton" id="btnz" name="btnz" value=""></td>
-            <td><input type="button" class="boton" id="btndiv" name="btndiv" value="/"></td>
+            <td><input type="button" class="boton" id="btndiv" name="btndiv" value="/" onclick="funDiv()"></td>
         </tr>
         <tr>
             <td><input type="button" class="boton" id="btn7" name="btn7" value="7" onclick="dispDigito(7)"></td>
             <td><input type="button" class="boton" id="btn8" name="btn8" value="8" onclick="dispDigito(8)"></td>
             <td><input type="button" class="boton" id="btn9" name="btn9" value="9" onclick="dispDigito(9)"></td>
-            <td><input type="button" class="boton" id="btnmul" name="btnmul" value="*"></td>
+            <td><input type="button" class="boton" id="btnmul" name="btnmul" value="*" onclick="funMul()"></td>
         </tr>
         <tr>
             <td><input type="button" class="boton" id="btn4" name="btn4" value="4" onclick="dispDigito(4)"></td>
             <td><input type="button" class="boton" id="btn5" name="btn5" value="5" onclick="dispDigito(5)"></td>
             <td><input type="button" class="boton" id="btn6" name="btn6" value="6" onclick="dispDigito(6)"></td>
-            <td><input type="button" class="boton" id="btnres" name="btnres" value="-"></td>
+            <td><input type="button" class="boton" id="btnres" name="btnres" value="-" onclick="funRes()"></td>
         </tr>
         <tr>
             <td><input type="button" class="boton" id="btn1" name="btn1" value="1" onclick="dispDigito(1)"></td>
             <td><input type="button" class="boton" id="btn2" name="btn2" value="2" onclick="dispDigito(2)"></td>
             <td><input type="button" class="boton" id="btn3" name="btn3" value="3" onclick="dispDigito(3)"></td>
-            <td><input type="button" class="boton" id="btnsum" name="btnsum" value="+"></td>
+            <td><input type="button" class="boton" id="btnsum" name="btnsum" value="+" onclick="funSum()"></td>
         </tr>
         <tr>
             <td><input type="button" class="boton" id="btn0" name="btn0" value="0" onclick="dispDigito(0)"></td>
