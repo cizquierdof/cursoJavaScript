@@ -27,15 +27,30 @@
     </style>
     <script>
         var digito="";
-        var suma=0;
+        var parcial=0;
+        var operacionCurso="";
         function dispDigito(num){
             document.getElementById("pantalla").value=digito+num;
             digito=document.getElementById("pantalla").value;
         }
         function funSum(){
-            suma=suma+parseInt(digito);
-            document.getElementById("pantalla").value=suma;
+            operacionCurso="suma";
+            parcial=parcial+parseInt(digito);
+            document.getElementById("pantalla").value=parcial;
             digito="";
+        }
+        function funEq(){
+            switch (operacionCurso){
+                case "suma":
+                {
+                    document.getElementById("pantalla").value=parcial+parseInt(digito);
+                    break;
+                }
+                case "resta":
+                {}
+            }
+
+            parcial=0;
         }
     </script>
 </head>
@@ -77,7 +92,7 @@
         <tr>
             <td><input type="button" class="boton" id="btn0" name="btn0" value="0" onclick="dispDigito(0)"></td>
             <td><input type="button" class="boton" id="btndot" name="btndot" value="."></td>
-            <td colspan="2"><input type="button" class="boton" name="btneq" value="="></td>
+            <td colspan="2"><input type="button" class="boton" name="btneq" value="=" onclick="funEq()"></td>
 
         </tr>
     </table>
