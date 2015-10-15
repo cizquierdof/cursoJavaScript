@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora JavaScript</title>
+    <link rel="stylesheet" href="css/calculadora.css">
+    <script src="js/jquery-2.1.4.js"></script>
+
+    <script>
+        var numero="0";
+        var digito="";
+        var parcial=0;
+        var opActual="";
+                var operador;
+
+                function muestra(digito){
+                    //var numero=$("#pantalla").val();
+
+                    if(digito=="."){
+                var decimal=numero.indexOf(".");
+                if(decimal==(-1)){numero+=digito;}
+            }else{
+                if(numero=="0"){numero=(digito=="0")?numero:digito;}
+                else{
+                    numero+=digito;
+                }
+            }
+            $("#pantalla").val(numero);
+            operador=parseFloat(numero);
+        }
+        function borrar()
+        {
+            $("#pantalla").val("0");
+            numero="";
+            parcial=0;
+        }
+        function funSum(){
+            opActual="+";
+            if(parcial){parcial=parcial+operador;}else parcial=operador;
+            numero="0";
+
+            $("#pantalla").val(parcial);
+        }
+        function funRes(){
+            
+            opActual="-";
+            if(parcial){parcial=parcial-operador;}else parcial=operador;
+            numero="0";
+
+            $("#pantalla").val(parcial);
+        }
+        function funDiv(){
+            opActual="/";
+            parcial=parcial/parseFloat(numero);
+            numero="0";
+
+            $("#pantalla").val(parcial);
+        }
+        function funMul(){
+            opActual="*";
+            parcial=parcial*parseFloat(numero);
+            numero="0";
+
+            $("#pantalla").val(parcial);
+        }
+        function funEq(){
+            var operador=$("#pantalla").val();
+           switch (opActual){
+               case "+":
+                   parcial+=parseFloat(operador);
+                   break;
+               case "-":
+                   parcial-=parseFloat(operador);
+                   break;
+               case "*":
+                   parcial*=parseFloat(operador);
+                   break;
+               case "/":
+                   parcial/=parseFloat(operador);
+                   break;
+           }
+            $("#pantalla").val(parcial);
+            //parcial=0;
+            numero="0";
+        }
+        $(function(){
+            $("#pantalla").val(numero);
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+<header>
+    <h1>Ejercicio de calculadora con JavaScript</h1>
+</header>
+<div class="calculadora">
+    <table>
+        <tr>
+            <td colspan="4">
+                <input class="pantalla" id="pantalla" name="pantalla" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" class="boton" id="btnx" name="btnx" value=""></td>
+            <td><input type="button" class="boton" id="btny" name="btny" value=""></td>
+            <td><input type="button" class="boton" id="btnz" name="btnz" value="CE" onclick="borrar()"></td>
+            <td><input type="button" class="boton" id="btndiv" name="btndiv" value="/" onclick="funDiv()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="boton" id="btn7" name="btn7" value=" 7" onclick="muestra('7')"></td>
+            <td><input type="button" class="boton" id="btn8" name="btn8" value=" 8" onclick="muestra('8')"></td>
+            <td><input type="button" class="boton" id="btn9" name="btn9" value=" 9" onclick="muestra('9')"></td>
+            <td><input type="button" class="boton" id="btnmul" name="btnmul" value=" *" onclick="funMul()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="boton" id="btn4" name="btn4" value=" 4" onclick="muestra('4')"></td>
+            <td><input type="button" class="boton" id="btn5" name="btn5" value=" 5" onclick="muestra('5')"></td>
+            <td><input type="button" class="boton" id="btn6" name="btn6" value=" 6" onclick="muestra('6')"></td>
+            <td><input type="button" class="boton" id="btnres" name="btnres" value=" -" onclick="funRes()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="boton" id="btn1" name="btn1" value=" 1" onclick="muestra('1')"></td>
+            <td><input type="button" class="boton" id="btn2" name="btn2" value=" 2" onclick="muestra('2')"></td>
+            <td><input type="button" class="boton" id="btn3" name="btn3" value=" 3" onclick="muestra('3')"></td>
+            <td><input type="button" class="boton" id="btnsum" name="btnsum" value=" +" onclick="funSum()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="boton" id="btn0" name="btn0" value="0" onclick="muestra(0)"></td>
+            <td><input type="button" class="boton" id="btndot" name="btndot" value="." onclick="muestra('.')"></td>
+            <td colspan="2"><input type="button" class="boton" name="btneq" value="=" onclick="funEq()"></td>
+
+        </tr>
+    </table>
+</div>
+<div id="cosas"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Uso de JQUERY</title>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script>
+        $(function(){
+            $("#img1").click(function(){$("#img1").remove()});
+        });
+
+    </script>
+</head>
+<body>
+<div id="tira">
+    <img src="img/10LabGlassFlasks-fb.jpg" id="img1">
+    <img src="img/130114_premios-diseno-reciclaje-valorizacion-residuos.jpeg" id="img2">
+    <img src="img/DISEÑO-GRÁFICO-002.jpg" id="img3">
+    <img src="img/tazas-ondas-cafe.jpg" id="img4">
+</div>
+<!--    OCULTACION DE IMAGENES CON JAVASCRIPT   -->
+<!--<script>
+    //seleccionar todas las imágenes del div "tira"
+    var imagenes=document.querySelectorAll("#tira img");
+    for(i=0;i<imagenes.length;i++){
+        imagenes[i].style.visibility="hidden";
+    }
+
+</script>-->
+</body>
+</html>
