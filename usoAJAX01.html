@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Uso de AJAX</title>
+    <link rel="stylesheet" href="css/noticias.css">
+    <style>
+       #cabecera a{
+            text-decoration: none;
+            color: white;
+            background-color: darkorange;
+            margin-right: 30px;
+        }
+        #cabecera li{
+            text-decoration: none;
+            display: inline-block;
+        }
+        #cabecera a:hover{
+            background-color: white;
+            color: darkorange;
+        }
+
+    </style>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script>
+        $(function(){
+            $("#cabecera a").click(function(){
+                var url=$(this).attr("href");
+                $("#contenidos").load(url+" article");
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<header id="cabecera">
+    <h1>PAGINA DE NOTICIAS</h1>
+    <ul>
+        <li><a href="contenidos/noticia1.html">Noticia 1</a></li>
+        <li><a href="contenidos/noticia2.html">Noticia 2</a></li>
+        <li><a href="contenidos/noticia3.html">Noticia 3</a></li>
+    </ul>
+</header>
+<div id="contenidos"></div>
+
+</body>
+</html>

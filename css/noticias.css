@@ -1,0 +1,22 @@
+body {
+    background: #334873;
+    font-family: verdana, sans-serif;
+    }
+#cabecera {
+    font-size: x-large;
+    color: cornflowerblue;
+    padding: 1%;
+}
+article{
+    border: solid white 1px;
+    padding: 10px;
+    width: 30%;
+    color: white;
+   
+}
+article header{
+    font-size: large;
+    color: cornsilk;
+    font-style: italic;
+    text-decoration: underline;
+}
