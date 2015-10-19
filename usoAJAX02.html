@@ -8,11 +8,12 @@
     <script>
         $(function(){
             $("#login").submit(function(){
-                var datosForm={
+               /* var datosForm={
                     usuario:$("#user").val(),
                     password:$("#pwd").val()
-                }
-                $.get("login.php",datosForm,procesaDatos);
+                }*/
+                var datosForm=$(this).serialize();
+                $.get("login.php",datosForm,procesaDatos).error(funError);
 
                 return false;
             });
@@ -23,6 +24,10 @@
                 }else{
                     $("#respuestas").html("<p>Usuario o password incorrectos</p>");
                 }
+            }
+
+            function funError(){
+                $("#respuestas").html("<p>Se ha producido un error</p>");
             }
         });
     </script>
