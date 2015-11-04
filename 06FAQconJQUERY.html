@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>FAQ</title>
+    <style>
+        body{
+            font-family: verdana, sans-serif;
+            font-size: small;
+            background-color: beige;
+        }
+        section{
+            width: 70%;
+            max-width: 800px;
+            background-color: azure;
+            border: inset 1px;
+            padding: 2em;
+        }
+    </style>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script>
+        $(function(){
+            //$("article > p").hide();
+            $("article > h3").toggle(function(){
+                $(this).next("p").fadeIn();
+            },
+            function(){
+                $(this).next("p").fadeOut();
+            });
+        });
+    </script>
 </head>
 <body>
 <header>
